@@ -19,7 +19,7 @@ window.onload = function () {
         // Remove flower after animation to clean up the DOM
         setTimeout(() => {
             flower.remove();
-        }, 25000);  // Removes after 25 seconds
+        }, 60000);  // Flowers will be removed after 60 seconds
     }
 
     // Create flowers for the first 5 seconds
@@ -27,8 +27,8 @@ window.onload = function () {
         setTimeout(createFlower, i * 50); // Delay each flower creation slightly
     }
 
-    // Fade out the flower rain after 25 seconds
+    // Fade out the flower rain after 60 seconds (adjusted to match the new rain duration)
     setTimeout(() => {
         flowerRain.style.opacity = '0';
-    }, 25000);
+    }, 60000); // Flower rain lasts for 60 seconds now
 };
