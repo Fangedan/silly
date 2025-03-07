@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', function () {
         flower.style.top = '-50px';  // Start above the screen
         flower.style.zIndex = '9999';
         flower.style.pointerEvents = 'none';
-        flower.style.width = `${Math.random() * 200 + 150}px`;  // Random flower size between 50px and 100px
+        flower.style.width = `${Math.random() * 100 + 100}px`;  // Random flower size between 50px and 100px
         flower.style.animation = 'fallingFlowers 15s linear infinite';
 
         // Randomize horizontal position of the flower
@@ -52,7 +52,7 @@ document.addEventListener('DOMContentLoaded', function () {
         // Remove flower after animation ends to prevent clutter
         setTimeout(() => {
             flower.remove();
-        }, 25000);
+        }, 15000);
     }
 
     // Generate multiple flowers
