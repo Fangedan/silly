@@ -19,7 +19,7 @@ window.onload = function () {
         // Remove flower after animation to clean up the DOM
         setTimeout(() => {
             flower.remove();
-        }, 5000);  // Removes after 5 seconds
+        }, 15000);  // Removes after 5 seconds
     }
 
     // Create flowers for the first 5 seconds
