@@ -19,7 +19,7 @@ window.onload = function () {
         // Remove exclamation after animation to clean up the DOM
         setTimeout(() => {
             exclamation.remove();
-        }, 3000);  // Removes after 3 seconds (duration of fall animation)
+        }, 60000);  // Removes after 60 seconds (duration of fall animation)
     }
 
     // Create exclamations every 100ms for 60 seconds
