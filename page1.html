@@ -39,6 +39,44 @@
             margin-top: 20px;
         }
 
+        /* Flower falling animation */
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        /* Exclamation element styling */
+        .exclamation {
+            position: absolute;
+            width: 30px; /* Adjust the exclamation size */
+            height: auto;
+            opacity: 0; /* Hidden initially */
+            animation: fall 10s linear infinite; /* Fall animation */
+        }
+
+        /* Create different sizes and delays for each exclamation */
+        .exclamation:nth-child(odd) {
+            animation-duration: 10s;
+        }
+
+        .exclamation:nth-child(even) {
+            animation-duration: 11s;
+        }
+
+        /* Fade out after the first 5 seconds */
+        #exclamation-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none; /* So it doesn't block clicks */
+        }
+
         /* Cat and flower background */
         body {
             background-image: url('https://github.com/Fangedan/silly/blob/main/Cat%20spinning.gif?raw=true'), url('https://github.com/Fangedan/silly/blob/main/baby_s_breath_raw-removebg-preview.png?raw=true');
@@ -49,6 +87,11 @@
     </style>
 </head>
 <body>
+    <!-- Flower Rain Container -->
+    <div id="flower-rain"></div>
+
+    <script src="flowerRain.js"></script>
+    
     <h1>Will you be my gf???</h1>
     <div class="button-container">
         <button onclick="location.href='page3.html'">yes!!!</button>
