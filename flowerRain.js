@@ -2,10 +2,6 @@ window.onload = function () {
     const flowerRain = document.getElementById('flower-rain');
     let flowers = 100; // Number of flowers to fall
 
-    // Define the minimum and maximum size for the flowers
-    const minSize = 30; // Minimum size of the flower in pixels
-    const maxSize = 80; // Maximum size of the flower in pixels
-
     // Function to create a flower element and animate it
     function createFlower() {
         let flower = document.createElement('img');
@@ -18,17 +14,12 @@ window.onload = function () {
         flower.style.animationDelay = Math.random() * 2 + 's'; // Random delay to stagger fall
         flower.style.opacity = 1;
 
-        // Randomize the flower size between minSize and maxSize
-        let flowerSize = Math.random() * (maxSize - minSize) + minSize;  // Random flower size between minSize and maxSize
-        flower.style.width = flowerSize + 'px';
-        flower.style.height = flowerSize + 'px'; // Ensure the flower maintains its aspect ratio
-
         flowerRain.appendChild(flower);
 
         // Remove flower after animation to clean up the DOM
         setTimeout(() => {
             flower.remove();
-        }, 25000);  // Removes after 25 seconds
+        }, 15000);  // Removes after 5 seconds
     }
 
     // Create flowers for the first 5 seconds
