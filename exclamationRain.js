@@ -19,7 +19,7 @@ window.onload = function () {
         // Remove exclamation after animation to clean up the DOM
         setTimeout(() => {
             exclamation.remove();
-        }, 15000);  // Removes after 5 seconds
+        }, 60000);  // Removes after 60 seconds
     }
 
     // Create exclamations for the first 5 seconds
@@ -30,5 +30,5 @@ window.onload = function () {
     // Fade out the exclamation rain after 5 seconds
     setTimeout(() => {
         exclamationRain.style.opacity = '0';
-    }, 5000);
+    }, 60000);
 };
