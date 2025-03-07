@@ -100,38 +100,50 @@
             margin-top: 10%;
         }
 
-        #heart-rain {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            pointer-events: none;
-            width: 100%;
-            height: 100%;
-            transform: translate(-50%, -50%);
+        /* Heart falling animation */
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
         }
 
+        /* Heart element styling */
         .heart {
             position: absolute;
-            width: 40px;
-            height: 40px;
-            animation: moveFlower 3s ease-in-out infinite;
-            opacity: 1;
+            width: 30px; /* Adjust the heart size */
+            height: auto;
+            opacity: 0; /* Hidden initially */
+            animation: fall 10s linear infinite; /* Fall animation */
         }
 
+        /* Create different sizes and delays for each heart */
+        .heart:nth-child(odd) {
+            animation-duration: 10s;
+        }
+
+        .heart:nth-child(even) {
+            animation-duration: 11s;
+        }
+
+        /* Fade out after the first 5 seconds */
         #heart-rain {
             position: absolute;
-            top: 50%;
-            left: 50%;
-            pointer-events: none;
-            width: 100%;
-            height: 100%;
-            transform: translate(-50%, -50%);
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none; /* So it doesn't block clicks */
         }
     </style>
 </head>
 <body>
     <!-- Heart Rain Container -->
     <div id="heart-rain"></div>
+
+    <script src="heartRain.js"></script>
 
     <img src="https://github.com/Fangedan/silly/blob/main/Jazmine.jpg?raw=true" alt="Your Friend" class="center-image">
     <h1>YAYYY!!!</h1>
@@ -140,38 +152,5 @@
         <img src="https://github.com/Fangedan/silly/blob/main/Cat%20spinning.gif?raw=true" alt="Cat" class="cat">
         <img src="https://github.com/Fangedan/silly/blob/main/baby_s_breath_raw-removebg-preview.png?raw=true" alt="Baby's Breath" class="flower">
     </div>
-
-    <script>
-        window.onload = function () {
-            const heartRain = document.getElementById('heart-rain');
-            let hearts = 30; // Number of hearts to fall
-
-            // Function to create a heart element and animate it
-            function createHeart() {
-                let heart = document.createElement('img');
-                heart.src = 'https://github.com/Fangedan/silly/blob/main/pink_heart-removebg-preview.png?raw=true'; 
-                heart.alt = 'Heart';
-                heart.classList.add('heart');
-
-                // Randomize the start time of each heart's animation
-                heart.style.animationDelay = Math.random() * 2 + 's'; // Staggered start time
-
-                heartRain.appendChild(heart);
-
-                // Remove heart after animation to clean up the DOM
-                setTimeout(() => {
-                    heart.remove();
-                }, 3000);  // Adjusted to the animation duration
-            }
-
-            // Create hearts continuously for 60 seconds
-            let interval = setInterval(createHeart, 150); // Create a new heart every 150ms
-
-            // Stop creating hearts after 60 seconds
-            setTimeout(() => {
-                clearInterval(interval);
-            }, 60000); // Stop after 60 seconds
-        };
-    </script>
 </body>
 </html>
