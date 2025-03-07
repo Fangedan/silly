@@ -14,17 +14,35 @@
             background-position: top left, bottom right;
             background-size: 150px, 300px;
             background-repeat: no-repeat;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
         }
 
         h1 {
             font-size: 3em;
-            margin-top: 20%;
             color: #ff66b2;
+            margin-top: 0; /* Remove margin to reduce space between image and text */
+            animation: bounce 1s ease-in-out infinite alternate;
+        }
+
+        /* Fancy bounce animation for the h1 */
+        @keyframes bounce {
+            0% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
 
         .celebration {
             font-size: 2em;
             color: #ff99cc;
+            margin-top: 20px;
         }
 
         .decor {
@@ -59,13 +77,58 @@
 
         /* Center the image in the middle of the page */
         .center-image {
-            width: 300px;  /* Customize the size */
-            height: auto;   /* Maintain aspect ratio */
-            border-radius: 15px;  /* Optional, to give the image rounded corners */
+            width: 300px;
+            height: auto;
+            border-radius: 15px;
+            margin-top: 10%; /* Adjust the margin to center the image */
         }
+
+        /* Heart falling animation */
+        @keyframes heartFall {
+            0% {
+                transform: translateY(-50px) rotate(0deg);
+            }
+            50% {
+                transform: translateY(50vh) rotate(180deg);
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+            }
+        }
+
+        .heart {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            animation: heartFall 3s linear infinite, spin 5s linear infinite;
+            opacity: 0;
+        }
+
+        @keyframes spin {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Create random heart generation and movement */
+        #heart-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
+
     </style>
 </head>
 <body>
+    <!-- Heart Rain Container -->
+    <div id="heart-rain"></div>
+
     <img src="https://github.com/Fangedan/silly/blob/main/Jazmine.jpg?raw=true" alt="Your Friend" class="center-image">
     <h1>YAYYY!!!</h1>
     <div class="celebration">I luv u ! 🎉</div>
@@ -73,5 +136,38 @@
         <img src="https://github.com/Fangedan/silly/blob/main/Cat%20spinning.gif?raw=true" alt="Cat" class="cat">
         <img src="https://github.com/Fangedan/silly/blob/main/baby_s_breath_raw-removebg-preview.png?raw=true" alt="Baby's Breath" class="flower">
     </div>
+
+    <script>
+        // Heart animation logic
+        window.onload = function () {
+            const heartRain = document.getElementById('heart-rain');
+            let hearts = 100; // Number of hearts to fall
+
+            // Function to create a heart element and animate it
+            function createHeart() {
+                let heart = document.createElement('img');
+                heart.src = 'https://github.com/Fangedan/silly/blob/main/heart.png?raw=true';  // Replace with your heart image URL
+                heart.alt = 'Heart';
+                heart.classList.add('heart');
+
+                // Randomize the starting position and animation delay for each heart
+                heart.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+                heart.style.animationDelay = Math.random() * 2 + 's'; // Random delay to stagger fall
+                heart.style.opacity = 1;
+
+                heartRain.appendChild(heart);
+
+                // Remove heart after animation to clean up the DOM
+                setTimeout(() => {
+                    heart.remove();
+                }, 5000);  // Remove heart after 5 seconds
+            }
+
+            // Create hearts for the first 5 seconds
+            for (let i = 0; i < hearts; i++) {
+                setTimeout(createHeart, i * 50); // Delay each heart creation slightly
+            }
+        };
+    </script>
 </body>
 </html>
