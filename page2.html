@@ -146,7 +146,7 @@
             // Function to create a heart element and animate it
             function createHeart() {
                 let heart = document.createElement('img');
-                heart.src = 'https://github.com/Fangedan/silly/blob/main/heart.png?raw=true';  // Replace with your heart image URL
+                heart.src = 'https://github.com/Fangedan/silly/blob/main/pink_heart-removebg-preview.png?raw=true'; 
                 heart.alt = 'Heart';
                 heart.classList.add('heart');
 
@@ -163,10 +163,13 @@
                 }, 5000);  // Remove heart after 5 seconds
             }
 
-            // Create hearts for the first 5 seconds
-            for (let i = 0; i < hearts; i++) {
-                setTimeout(createHeart, i * 50); // Delay each heart creation slightly
-            }
+            // Create hearts continuously for 60 seconds
+            let interval = setInterval(createHeart, 50); // Create a new heart every 50ms
+
+            // Stop creating hearts after 60 seconds
+            setTimeout(() => {
+                clearInterval(interval);
+            }, 60000); // Stop after 60 seconds
         };
     </script>
 </body>
