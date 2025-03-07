@@ -3,26 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>YAYYY!!!</title>
+    <title>Will You Be My GF?</title>
     <style>
         body {
-            background-color: #ffccf5;
+            background-color: #ffd9e6;
             color: #ff80bf;
-            font-family: Arial, sans-serif;
+            font-family: 'Cursive', sans-serif;
             text-align: center;
-            background-image: url('https://your-github-url/cat.png'), url('https://your-github-url/babys-breath.png');
-            background-position: top left, bottom right;
-            background-size: 150px, 300px;
-            background-repeat: no-repeat;
             margin: 0;
             padding: 0;
             overflow: hidden;
+            background-image: url('https://github.com/Fangedan/silly/blob/main/Cat%20spinning.gif?raw=true'), url('https://github.com/Fangedan/silly/blob/main/baby_s_breath_raw-removebg-preview.png?raw=true');
+            background-position: top left, bottom right;
+            background-size: 150px, 300px;
+            background-repeat: no-repeat;
         }
 
         h1 {
-            font-size: 3em;
-            color: #ff66b2;
-            margin-top: 0; /* Remove margin to reduce space between image and text */
+            font-size: 4em;
+            margin-top: 15%;
+            color: #ff80bf;
+            text-shadow: 0 4px 6px rgba(0, 0, 0, 0.3), 0 2px 4px rgba(255, 255, 255, 0.6);
+            font-family: 'Lobster', cursive;
+            letter-spacing: 3px;
             animation: bounce 1s ease-in-out infinite alternate;
         }
 
@@ -39,129 +42,148 @@
             }
         }
 
-        .celebration {
-            font-size: 2em;
-            color: #ff99cc;
-            margin-top: 20px;
-        }
-
-        .decor {
-            margin-top: 20px;
-            color: #ff66b2;
-        }
-
-        .cat {
-            width: 100px;
-            margin: 10px;
-        }
-
-        .flower {
-            width: 100px;
-            margin: 10px;
-        }
-
-        .button {
-            margin-top: 20px;
-            padding: 15px 30px;
+        button {
+            padding: 20px 40px;
             font-size: 1.5em;
-            background-color: #ff66b2;
+            background-color: #ff80bf;
             color: white;
             border: none;
             cursor: pointer;
-            border-radius: 10px;
+            margin: 20px;
+            border-radius: 25px;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .button:hover {
-            background-color: #ff3399;
+        button:hover {
+            background-color: #ff66b2;
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
         }
 
-        /* Center the image in the middle of the page */
-        .center-image {
-            width: 300px;
-            height: auto;
-            border-radius: 15px;
-            margin-top: 10%; /* Adjust the margin to center the image */
+        button:active {
+            transform: translateY(2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
 
-        /* Flower falling animation */
-        @keyframes flowerFall {
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 30px;
+            padding: 10px;
+        }
+
+        /* Exclamation falling animation */
+        @keyframes fall {
             0% {
-                transform: translateY(-50px) rotate(0deg);
-            }
-            50% {
-                transform: translateY(50vh) rotate(180deg);
+                transform: translateY(-100px) rotate(0deg);
             }
             100% {
                 transform: translateY(100vh) rotate(360deg);
             }
         }
 
-        .flower-img {
+        /* Exclamation element styling */
+        .exclamation {
             position: absolute;
-            width: 40px;
-            height: 40px;
-            animation: flowerFall 3s linear infinite;
-            opacity: 0;
+            width: 40px; /* Adjust the exclamation size */
+            height: auto;
+            opacity: 0; /* Hidden initially */
+            animation: fall 10s linear infinite; /* Fall animation */
         }
 
-        #flower-rain {
+        /* Create different sizes and delays for each exclamation */
+        .exclamation:nth-child(odd) {
+            animation-duration: 10s;
+        }
+
+        .exclamation:nth-child(even) {
+            animation-duration: 11s;
+        }
+
+        /* Fade out after the first 5 seconds */
+        #exclamation-rain {
             position: absolute;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            pointer-events: none;
+            pointer-events: none; /* So it doesn't block clicks */
         }
 
+        /* Fancy text shadow for buttons */
+        button {
+            background: linear-gradient(45deg, #ff80bf, #ff66b2);
+            border-radius: 50px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            transition: all 0.3s ease-in-out;
+            font-size: 1.5em;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.6);
+            background: linear-gradient(45deg, #ff66b2, #ff80bf);
+        }
+
+        /* Add a glowing effect to buttons */
+        button:focus {
+            outline: none;
+            box-shadow: 0 0 10px 4px #ff80bf;
+            animation: glowing 1.5s infinite;
+        }
+
+        @keyframes glowing {
+            0% { box-shadow: 0 0 5px 4px #ff80bf; }
+            50% { box-shadow: 0 0 15px 10px #ff80bf; }
+            100% { box-shadow: 0 0 5px 4px #ff80bf; }
+        }
+
+        /* Add gradient text */
+        .gradient-text {
+            background: linear-gradient(45deg, #ff80bf, #ff66b2);
+            -webkit-background-clip: text;
+            color: transparent;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
-    <!-- Flower Rain Container -->
-    <div id="flower-rain"></div>
+    <!-- Exclamation Rain Container -->
+    <div id="exclamation-rain"></div>
 
-    <img src="https://github.com/Fangedan/silly/blob/main/Jazmine.jpg?raw=true" alt="Your Friend" class="center-image">
-    <h1>YAYYY!!!</h1>
-    <div class="celebration">I luv u ! 🎉</div>
-    <div class="decor">
-        <img src="https://github.com/Fangedan/silly/blob/main/Cat%20spinning.gif?raw=true" alt="Cat" class="cat">
-        <img src="https://github.com/Fangedan/silly/blob/main/baby_s_breath_raw-removebg-preview.png?raw=true" alt="Baby's Breath" class="flower">
+    <script src="exclamationRain.js"></script>
+
+    <h1 class="gradient-text">Will you be my gf???</h1>
+    <div class="button-container">
+        <button onclick="location.href='page2.html'">yes!!!</button>
+        <button onclick="showMessages()">no :(</button>
     </div>
 
     <script>
-        window.onload = function () {
-            const flowerRain = document.getElementById('flower-rain');
-            let flowers = 100; // Number of flowers to fall
+        let counter = 0; // Declare counter globally to keep track of the message index
 
-            // Function to create a flower element and animate it
-            function createFlower() {
-                let flower = document.createElement('img');
-                flower.src = 'https://github.com/Fangedan/silly/blob/main/flower_image.png?raw=true';  // Replace with your flower image URL
-                flower.alt = 'Flower';
-                flower.classList.add('flower-img');
+        function showMessages() {
+            let messages = [
+                "bitch be fr",
+                "ong? :(",
+                "on everyone's soul except mine she wants me",
+                "noo :(",
+                "pls",
+            ];
 
-                // Randomize the starting position and animation delay for each flower
-                flower.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
-                flower.style.animationDelay = Math.random() * 2 + 's'; // Random delay to stagger fall
-                flower.style.opacity = 1;
-
-                flowerRain.appendChild(flower);
-
-                // Remove flower after animation to clean up the DOM
-                setTimeout(() => {
-                    flower.remove();
-                }, 60000);  // Flowers will be removed after 60 seconds
+            if (counter < messages.length) {
+                alert(messages[counter]);
+                counter++;
+            } else {
+                alert("oh so we just friends huh");
+                counter = 0; // Reset counter after the last message
             }
-
-            // Create flowers for the first 5 seconds
-            for (let i = 0; i < flowers; i++) {
-                setTimeout(createFlower, i * 50); // Delay each flower creation slightly
-            }
-
-            // Fade out the flower rain after 60 seconds
-            setTimeout(() => {
-                flowerRain.style.opacity = '0';
-            }, 60000); // Flower rain lasts for 60 seconds now
-        };
+        }
     </script>
 </body>
 </html>
