@@ -91,7 +91,7 @@
     <div id="flower-rain"></div>
 
     <script src="flowerRain.js"></script>
-    
+
     <h1>Will you be my gf???</h1>
     <div class="button-container">
         <button onclick="location.href='page3.html'">yes!!!</button>
@@ -99,6 +99,8 @@
     </div>
 
     <script>
+        let counter = 0; // Declare counter globally to keep track of the message index
+
         function showMessages() {
             let messages = [
                 "bitch be fr",
@@ -108,18 +110,13 @@
                 "on everyone's soul except mine she wants me",
             ];
 
-            let counter = 0;
-            alert(messages[counter]);
-
-            let interval = setInterval(() => {
+            if (counter < messages.length) {
+                alert(messages[counter]);
                 counter++;
-                if (counter < messages.length) {
-                    alert(messages[counter]);
-                } else {
-                    clearInterval(interval);
-                    alert("Please choose 'Yes!!!'!");
-                }
-            }, 2000); // Alert messages every 2 seconds
+            } else {
+                alert("Please choose 'Yes!!!'!");
+                counter = 0; // Reset counter after the last message
+            }
         }
     </script>
 </body>
