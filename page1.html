@@ -83,8 +83,8 @@
             margin-top: 10%; /* Adjust the margin to center the image */
         }
 
-        /* Heart falling animation */
-        @keyframes heartFall {
+        /* Flower falling animation */
+        @keyframes flowerFall {
             0% {
                 transform: translateY(-50px) rotate(0deg);
             }
@@ -96,25 +96,15 @@
             }
         }
 
-        .heart {
+        .flower-img {
             position: absolute;
             width: 40px;
             height: 40px;
-            animation: heartFall 3s linear infinite, spin 5s linear infinite;
+            animation: flowerFall 3s linear infinite;
             opacity: 0;
         }
 
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
-        }
-
-        /* Create random heart generation and movement */
-        #heart-rain {
+        #flower-rain {
             position: absolute;
             top: 0;
             left: 0;
@@ -126,8 +116,8 @@
     </style>
 </head>
 <body>
-    <!-- Heart Rain Container -->
-    <div id="heart-rain"></div>
+    <!-- Flower Rain Container -->
+    <div id="flower-rain"></div>
 
     <img src="https://github.com/Fangedan/silly/blob/main/Jazmine.jpg?raw=true" alt="Your Friend" class="center-image">
     <h1>YAYYY!!!</h1>
@@ -138,38 +128,39 @@
     </div>
 
     <script>
-        // Heart animation logic
         window.onload = function () {
-            const heartRain = document.getElementById('heart-rain');
-            let hearts = 100; // Number of hearts to fall
+            const flowerRain = document.getElementById('flower-rain');
+            let flowers = 100; // Number of flowers to fall
 
-            // Function to create a heart element and animate it
-            function createHeart() {
-                let heart = document.createElement('img');
-                heart.src = 'https://github.com/Fangedan/silly/blob/main/heart.png?raw=true';  // Replace with your heart image URL
-                heart.alt = 'Heart';
-                heart.classList.add('heart');
+            // Function to create a flower element and animate it
+            function createFlower() {
+                let flower = document.createElement('img');
+                flower.src = 'https://github.com/Fangedan/silly/blob/main/flower_image.png?raw=true';  // Replace with your flower image URL
+                flower.alt = 'Flower';
+                flower.classList.add('flower-img');
 
-                // Randomize the starting position and animation delay for each heart
-                heart.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
-                heart.style.animationDelay = Math.random() * 2 + 's'; // Random delay to stagger fall
-                heart.style.opacity = 1;
+                // Randomize the starting position and animation delay for each flower
+                flower.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+                flower.style.animationDelay = Math.random() * 2 + 's'; // Random delay to stagger fall
+                flower.style.opacity = 1;
 
-                heartRain.appendChild(heart);
+                flowerRain.appendChild(flower);
 
-                // Remove heart after animation to clean up the DOM
+                // Remove flower after animation to clean up the DOM
                 setTimeout(() => {
-                    heart.remove();
-                }, 5000);  // Remove heart after 5 seconds
+                    flower.remove();
+                }, 60000);  // Flowers will be removed after 60 seconds
             }
 
-            // Create hearts continuously for 60 seconds
-            let interval = setInterval(createHeart, 50); // Create a new heart every 50ms
+            // Create flowers for the first 5 seconds
+            for (let i = 0; i < flowers; i++) {
+                setTimeout(createFlower, i * 50); // Delay each flower creation slightly
+            }
 
-            // Stop creating hearts after 60 seconds
+            // Fade out the flower rain after 60 seconds
             setTimeout(() => {
-                clearInterval(interval);
-            }, 60000); // Stop after 60 seconds
+                flowerRain.style.opacity = '0';
+            }, 60000); // Flower rain lasts for 60 seconds now
         };
     </script>
 </body>
