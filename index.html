@@ -38,6 +38,22 @@
         .pink-button:hover {
             background-color: #ff66a3;
         }
+
+        .side-image {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 150px; /* Adjust size as needed */
+            height: auto;
+        }
+
+        .left-image {
+            left: 20px; /* Distance from the left edge */
+        }
+
+        .right-image {
+            right: 20px; /* Distance from the right edge */
+        }
     </style>
 </head>
 <body>
@@ -51,5 +67,9 @@
         </ul>
         <p>Click <a href="#" class="pink-button">Here</a> for a suprise !!!</p>
     </div>
+
+    <!-- Side images for decoration -->
+    <img src="your-left-image.gif" alt="Left Image" class="side-image left-image">
+    <img src="your-right-image.gif" alt="Right Image" class="side-image right-image">
 </body>
 </html>
