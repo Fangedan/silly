@@ -160,7 +160,7 @@
     <script>
         window.onload = function () {
             const heartRain = document.getElementById('heart-rain');
-            let hearts = 100; // Number of hearts to fall
+            let hearts = 30; // Number of hearts to fall (reduced from 100)
 
             // Function to create a heart element and animate it
             function createHeart() {
@@ -171,6 +171,7 @@
 
                 // Randomize the starting position and animation delay for each heart
                 heart.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
+                heart.style.top = -50 + 'px'; // Start above the screen
                 heart.style.animationDelay = Math.random() * 2 + 's'; // Random delay to stagger fall
                 heart.style.opacity = 1;
 
@@ -179,11 +180,11 @@
                 // Remove heart after animation to clean up the DOM
                 setTimeout(() => {
                     heart.remove();
-                }, 60000);  // Remove heart after 60 seconds
+                }, 3000);  // Remove heart after 3 seconds (faster removal)
             }
 
             // Create hearts continuously for 60 seconds
-            let interval = setInterval(createHeart, 50); // Create a new heart every 50ms
+            let interval = setInterval(createHeart, 150); // Create a new heart every 150ms (slower rate)
 
             // Stop creating hearts after 60 seconds
             setTimeout(() => {
