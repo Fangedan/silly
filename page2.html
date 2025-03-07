@@ -7,7 +7,7 @@
     <style>
         body {
             background: url('https://github.com/Fangedan/silly/blob/main/how%20pretty%20my%20gf%20is.jpeg?raw=true') no-repeat center center fixed;
-            background-size: cover;
+            background-size: 100% 100%;
             color: #ff80bf;
             font-family: Arial, sans-serif;
             text-align: center;
@@ -63,9 +63,55 @@
             border-radius: 15px;
             margin-top: 10%;
         }
+
+        /* Heart falling animation */
+        @keyframes fall {
+            0% { transform: translateY(-100px) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(100vh) rotate(360deg); opacity: 0; }
+        }
+
+        /* Heart element styling */
+        .heart {
+            position: absolute;
+            width: 30px;
+            height: auto;
+            opacity: 0;
+            animation: fall 10s linear infinite;
+        }
+
+        .heart:nth-child(odd) {
+            animation-duration: 10s;
+        }
+
+        .heart:nth-child(even) {
+            animation-duration: 11s;
+        }
+
+        #heart-rain {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            pointer-events: none;
+        }
     </style>
 </head>
 <body>
+    <div id="heart-rain"></div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const heartContainer = document.getElementById("heart-rain");
+            for (let i = 0; i < 20; i++) {
+                let heart = document.createElement("img");
+                heart.src = "https://your-github-url/heart.png";
+                heart.classList.add("heart");
+                heart.style.left = Math.random() * 100 + "vw";
+                heart.style.animationDelay = Math.random() * 5 + "s";
+                heartContainer.appendChild(heart);
+            }
+        });
+    </script>
     <img src="https://github.com/Fangedan/silly/blob/main/Jazmine.jpg?raw=true" alt="mine" class="center-image">
     <h1>YAYYY!!!</h1>
     <div class="celebration">I luv u ! 🎉</div>
