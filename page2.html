@@ -6,14 +6,11 @@
     <title>YAYYY!!!</title>
     <style>
         body {
-            background-color: #ffccf5;
+            background: url('https://github.com/Fangedan/silly/blob/main/how%20pretty%20my%20gf%20is.jpeg?raw=true') no-repeat center center fixed;
+            background-size: cover;
             color: #ff80bf;
             font-family: Arial, sans-serif;
             text-align: center;
-            background-image: url('https://your-github-url/cat.png'), url('https://your-github-url/babys-breath.png');
-            background-position: top left, bottom right;
-            background-size: 150px, 300px;
-            background-repeat: no-repeat;
             margin: 0;
             padding: 0;
             overflow: hidden;
@@ -27,15 +24,9 @@
         }
 
         @keyframes bounce {
-            0% {
-                transform: translateY(0);
-            }
-            50% {
-                transform: translateY(-20px);
-            }
-            100% {
-                transform: translateY(0);
-            }
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+            100% { transform: translateY(0); }
         }
 
         .celebration {
@@ -49,48 +40,21 @@
             color: #ff66b2;
         }
 
-        .cat {
+        .cat, .flower {
             width: 100px;
             margin: 10px;
         }
 
         .flower {
-            width: 100px;
-            margin: 10px;
             animation: moveFlower 3s ease-in-out infinite;
         }
 
         @keyframes moveFlower {
-            0% {
-                transform: translate(0, 0);
-            }
-            25% {
-                transform: translate(30px, -30px);
-            }
-            50% {
-                transform: translate(-50px, 50px);
-            }
-            75% {
-                transform: translate(70px, -20px);
-            }
-            100% {
-                transform: translate(-60px, 60px);
-            }
-        }
-
-        .button {
-            margin-top: 20px;
-            padding: 15px 30px;
-            font-size: 1.5em;
-            background-color: #ff66b2;
-            color: white;
-            border: none;
-            cursor: pointer;
-            border-radius: 10px;
-        }
-
-        .button:hover {
-            background-color: #ff3399;
+            0% { transform: translate(0, 0); }
+            25% { transform: translate(30px, -30px); }
+            50% { transform: translate(-50px, 50px); }
+            75% { transform: translate(70px, -20px); }
+            100% { transform: translate(-60px, 60px); }
         }
 
         .center-image {
@@ -99,53 +63,10 @@
             border-radius: 15px;
             margin-top: 10%;
         }
-
-        /* Heart falling animation */
-        @keyframes fall {
-            0% {
-                transform: translateY(-100px) rotate(0deg);
-            }
-            100% {
-                transform: translateY(100vh) rotate(360deg);
-            }
-        }
-
-        /* Heart element styling */
-        .heart {
-            position: absolute;
-            width: 30px; /* Adjust the heart size */
-            height: auto;
-            opacity: 0; /* Hidden initially */
-            animation: fall 10s linear infinite; /* Fall animation */
-        }
-
-        /* Create different sizes and delays for each heart */
-        .heart:nth-child(odd) {
-            animation-duration: 10s;
-        }
-
-        .heart:nth-child(even) {
-            animation-duration: 11s;
-        }
-
-        /* Fade out after the first 5 seconds */
-        #heart-rain {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            pointer-events: none; /* So it doesn't block clicks */
-        }
     </style>
 </head>
 <body>
-    <!-- Heart Rain Container -->
-    <div id="heart-rain"></div>
-
-    <script src="heartRain.js"></script>
-
-    <img src="https://github.com/Fangedan/silly/blob/main/Jazmine.jpg?raw=true" alt="Your Friend" class="center-image">
+    <img src="https://github.com/Fangedan/silly/blob/main/Jazmine.jpg?raw=true" alt="mine" class="center-image">
     <h1>YAYYY!!!</h1>
     <div class="celebration">I luv u ! 🎉</div>
     <div class="decor">
