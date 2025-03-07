@@ -40,7 +40,6 @@
             font-weight: bold;
         }
 
-
         /* Sparkling star styling */
         .star {
             position: absolute;
@@ -136,11 +135,47 @@
 
     <div class="container">
         <h1>Hi <span class="glow">Jazmine</span> !!!</h1>
-        <h2>(hey)</h2>
-        <p>I spent [insert time here] hours on 3/7/2025 making ts u better say ty</p>
+        <h2>(hey (3/7/2025 btw))</h2>
+        <p>I spent 4 hours making ts u better say ty</p>
         <p>Here's a list of things I appreciate abt u:</p>
         <ul>
             <li>ur eyes !</li>
+            <li>beautiful smile</li>
+            <li>u like pokemon</li>
+            <li>watches anime</li>
+            <li>wait u stole my phone and went thru my notes app and camera roll</li>
+            <li>ur calm luh quiet type shi</li>
+            <li>u have funni instagram reels</li>
+            <li>silly !</li>
+            <li>iHop enjoyer</li>
+            <li>cat girl</li>
+            <li>sushi!! (i love sushi)</li>
+            <li>spontaneous :)</li>
+            <li>cs major :(</li>
+            <li>put me on pierce the veil!</li>
+            <li>cute laugh</li>
+            <li>always dressed up</li>
+            <li>employed!!!</li>
+            <li>likes pink</li>
+            <li>fnaf && undertale</li>
+            <li>can pull off glasses and contacts</li>
+            <li>is lowk too tall</li>
+            <li>healthy nails</li>
+            <li>studious!</li>
+            <li>music while studying (real)</li>
+            <li>highkey plotted on me (that was evil I wasn't ready)</li>
+            <li>complimented my eyes :)</li>
+            <li>DD</li>
+            <li>asks for consent</li>
+            <li>I enjoy ur company :)</li>
+            <li>MEZ 1.118</li>
+            <li>that was actually crazy^</li>
+            <li>got me silly on a Monday night</li>
+            <li>got me silly on a Tuesday night</li>
+            <li>almost got me silly on a Wednesday night</li>
+            <li>DEFINITELY got me silly on a Thursday night</li>
+            <li>silly Friday!</li>
+            <li id="time-since">bro I've known u for </li>
         </ul>
         <p>Click <a href="https://fangedan.github.io/silly/page1.html" class="pink-button">Here</a> for a suprise !!!</p>
     </div>
@@ -152,5 +187,28 @@
     <!-- Right JPEG from GitHub -->
     <img src="https://github.com/Fangedan/silly/blob/main/me%20leaning%20in%20after%20fnaf.jpeg?raw=true" 
     alt="Right JPEG" class="side-image right-image" style="width: 400px; height: auto;">
+
+    <script>
+        function updateTimeSince() {
+            const targetDate = new Date('2025-02-28T23:59:59'); // Date: 2/28/2025 at 11:59:59 PM
+            const now = new Date();
+            const diff = now - targetDate; // Difference in milliseconds
+
+            // Time calculations
+            const seconds = Math.floor(diff / 1000);
+            const minutes = Math.floor(seconds / 60);
+            const hours = Math.floor(minutes / 60);
+            const days = Math.floor(hours / 24);
+            const months = Math.floor(days / 30); // Approximating 30 days per month
+            const years = Math.floor(months / 12); // Approximating 12 months per year
+
+            // Formatting output
+            document.getElementById('time-since').innerHTML = `bro I've known u for ${years} years, ${months % 12} months, ${days % 30} days, ${hours % 24} hours, ${minutes % 60} minutes, and ${seconds % 60} seconds.`;
+
+            setTimeout(updateTimeSince, 1000); // Update every second
+        }
+
+        updateTimeSince(); // Initialize clock on load
+    </script>
 </body>
 </html>
