@@ -34,6 +34,27 @@
             text-align: left; /* Ensures text aligns properly */
         }
 
+        .glow {
+            color: #ff80bf; /* Pink color */
+            text-shadow: 0 0 5px #ff66a3, 0 0 10px #ff3385, 0 0 15px #ff0066; /* Glowing effect */
+            font-weight: bold;
+        }
+
+        /* Sparkling star styling */
+        .star {
+            position: absolute;
+            width: 30px; /* Adjust size */
+            height: auto;
+            animation: twinkle 1.5s infinite alternate ease-in-out;
+        }
+
+        /* Animating stars for a twinkling effect */
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(1); }
+            100% { opacity: 1; transform: scale(1.2); }
+        }
+
+
         .pink-button {
             background-color: #ff80bf;
             color: #fff;
@@ -65,8 +86,13 @@
     </style>
 </head>
 <body>
+    <!-- Sparkling stars -->
+    <img src="https://your-github-url/star1.gif" alt="Star" class="star" style="top: 50px; left: 40px;">
+    <img src="https://your-github-url/star2.gif" alt="Star" class="star" style="top: 80px; right: 50px;">
+    <img src="https://your-github-url/star3.gif" alt="Star" class="star" style="top: 120px; left: 70px;">
+
     <div class="container">
-        <h1>Hi Jazmine !!!</h1>
+        <h1>Hi <span class="glow">Jazmine</span> !!!</h1>
         <h2>(hey)</h2>
         <p>I stayed up until [insert time here] on 3/7/2025 making ts u better say ty</p>
         <p>Here's a list of [insert number of things] things I appreciate abt u:</p>
