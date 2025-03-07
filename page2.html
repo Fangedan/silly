@@ -81,21 +81,12 @@
             margin-top: 10%;
         }
 
-        @keyframes heartFall {
+        @keyframes vortex {
             0% {
-                transform: translateY(-50px) rotate(0deg) scale(1);
-            }
-            25% {
-                transform: translateY(25vh) rotate(45deg) scale(1.2);
-            }
-            50% {
-                transform: translateY(50vh) rotate(90deg) scale(0.8);
-            }
-            75% {
-                transform: translateY(75vh) rotate(135deg) scale(1.1);
+                transform: translate(-50%, -50%) rotate(0deg) translateX(0);
             }
             100% {
-                transform: translateY(100vh) rotate(180deg) scale(1);
+                transform: translate(-50%, -50%) rotate(360deg) translateX(150px);
             }
         }
 
@@ -103,17 +94,8 @@
             position: absolute;
             width: 40px;
             height: 40px;
-            animation: heartFall 3s ease-in-out infinite, spin 5s linear infinite, moveCrazy 5s ease-in-out infinite;
+            animation: vortex 3s ease-in-out infinite, moveCrazy 5s ease-in-out infinite;
             opacity: 1;
-        }
-
-        @keyframes spin {
-            0% {
-                transform: rotate(0deg);
-            }
-            100% {
-                transform: rotate(360deg);
-            }
         }
 
         @keyframes moveCrazy {
@@ -136,11 +118,12 @@
 
         #heart-rain {
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
+            top: 50%;
+            left: 50%;
             pointer-events: none;
+            width: 100%;
+            height: 100%;
+            transform: translate(-50%, -50%);
         }
 
     </style>
@@ -160,7 +143,7 @@
     <script>
         window.onload = function () {
             const heartRain = document.getElementById('heart-rain');
-            let hearts = 30; // Number of hearts to fall (reduced from 100)
+            let hearts = 30; // Number of hearts to fall
 
             // Function to create a heart element and animate it
             function createHeart() {
@@ -169,22 +152,19 @@
                 heart.alt = 'Heart';
                 heart.classList.add('heart');
 
-                // Randomize the starting position and animation delay for each heart
-                heart.style.left = Math.random() * 100 + 'vw'; // Random horizontal position
-                heart.style.top = -50 + 'px'; // Start above the screen
-                heart.style.animationDelay = Math.random() * 2 + 's'; // Random delay to stagger fall
-                heart.style.opacity = 1;
+                // Randomize the start time of each heart's animation
+                heart.style.animationDelay = Math.random() * 2 + 's'; // Staggered start time
 
                 heartRain.appendChild(heart);
 
                 // Remove heart after animation to clean up the DOM
                 setTimeout(() => {
                     heart.remove();
-                }, 3000);  // Remove heart after 3 seconds (faster removal)
+                }, 3000);  // Remove heart after 3 seconds
             }
 
             // Create hearts continuously for 60 seconds
-            let interval = setInterval(createHeart, 150); // Create a new heart every 150ms (slower rate)
+            let interval = setInterval(createHeart, 150); // Create a new heart every 150ms
 
             // Stop creating hearts after 60 seconds
             setTimeout(() => {
