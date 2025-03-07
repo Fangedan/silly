@@ -22,11 +22,10 @@
         h1 {
             font-size: 3em;
             color: #ff66b2;
-            margin-top: 0; /* Remove margin to reduce space between image and text */
+            margin-top: 0;
             animation: bounce 1s ease-in-out infinite alternate;
         }
 
-        /* Fancy bounce animation for the h1 */
         @keyframes bounce {
             0% {
                 transform: translateY(0);
@@ -75,15 +74,13 @@
             background-color: #ff3399;
         }
 
-        /* Center the image in the middle of the page */
         .center-image {
             width: 300px;
             height: auto;
             border-radius: 15px;
-            margin-top: 10%; /* Adjust the margin to center the image */
+            margin-top: 10%;
         }
 
-        /* Heart falling animation */
         @keyframes heartFall {
             0% {
                 transform: translateY(-50px) rotate(0deg);
@@ -101,7 +98,7 @@
             width: 40px;
             height: 40px;
             animation: heartFall 3s linear infinite, spin 5s linear infinite;
-            opacity: 1; /* Keep the hearts visible */
+            opacity: 1;
         }
 
         @keyframes spin {
@@ -113,7 +110,6 @@
             }
         }
 
-        /* Create random heart generation and movement */
         #heart-rain {
             position: absolute;
             top: 0;
@@ -138,7 +134,6 @@
     </div>
 
     <script>
-        // Heart animation logic
         window.onload = function () {
             const heartRain = document.getElementById('heart-rain');
             let hearts = 100; // Number of hearts to fall
