@@ -5,7 +5,7 @@ window.onload = function () {
     // Function to create a flower element and animate it
     function createFlower() {
         let flower = document.createElement('img');
-        flower.src = 'https://github.com/Fangedan/silly/blob/main/baby_s_breath_raw-removebg-preview.png?raw=true';  // Change this URL to your flower image
+        flower.src = 'https://github.com/Fangedan/silly/blob/main/baby_s_breath_raw-removebg-preview.png?raw=true';
         flower.alt = 'Flower';
         flower.classList.add('flower');
 
