@@ -222,7 +222,10 @@
 
     <script>
         function updateVisitCount() {
-            fetch('https://api.countapi.xyz/hit/silly-website-unique/visits')
+            const namespace = "silly-website"; // Unique namespace
+            const key = "visits"; // Counter key
+
+            fetch(`https://api.countapi.xyz/update/${namespace}/${key}/?amount=1`)
                 .then(response => response.json())
                 .then(data => {
                     document.getElementById('visit-counter').innerText = `Page visits: ${data.value}`;
